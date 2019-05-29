@@ -15,7 +15,7 @@ function daysInYear(int) {
     }
     return daysInYear(year);
   }
-  return 'exception';
+  throw 'exception';
 }
 
 console.log(daysInYear(2019));
