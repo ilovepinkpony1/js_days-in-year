@@ -1,21 +1,22 @@
-"use strict";
+'use strict';
 
-function daysInYear(int) {
-  if (Number.isInteger(int) && int % 1 === 0) {
-    function daysInYear(int) {
-      return isLeapYear(int) ? 366 : 365;
-    }
-    function isLeapYear(int) {
-      return int % 400 === 0 || (int % 100 !== 0 && int % 4 === 0);
-    }
-    return daysInYear(int);
+function daysInYear(year) {
+  if (Number.isInteger(year) && Number.isFinite(year)) {
+    return isLeapYear(year);
   }
-  throw new Error("exception");
+  throw new Error('exception');
+}
+
+function isLeapYear(currYear) {
+  if (currYear % 400 === 0 || (currYear % 100 !== 0 && currYear % 4 === 0)) {
+    return 366;
+  }
+  return 365;
 }
 
 console.log(daysInYear(2019));
 // 365
-console.log(daysInYear("2019"));
+console.log(daysInYear('2019'));
 // // exception
 console.log(daysInYear(2020));
 // // 366
